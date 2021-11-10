@@ -5,7 +5,7 @@
 loadkeys uk
 timedatectl set-timezone Europe/London
 timedatectl set-ntp true
-pacstrap /mnt base base-devel linux linux-firmware
+pacstrap /mnt base base-devel linux linux-firmware vim git
 
 # Once the base installation is completed, generate the /etc/fstab file
 genfstab -U /mnt >> /mnt/etc/fstab
