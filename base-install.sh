@@ -23,7 +23,7 @@ echo ::1 localhost >> /etc/hosts
 echo 127.0.1.1 $hostname.localdomain $hostname >> /etc/hosts
 
 # Install additional packages (they will be used later on)
-pacman -S zsh ufw iwd dhcp --noconfirm
+pacman -S zsh ufw iwd dhcp linux-lts-headers --noconfirm
 
 # Add my user account
 read -r -p "User name: " username
