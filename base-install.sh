@@ -41,8 +41,7 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Enable required services
-systemctl enable dhcpd
-systemctl enable systemd-resolved
+systemctl enable dhcpd systemd-networkd systemd-resolved iwd
 
 echo "Installation is complete."
 echo "Now do the following:"
