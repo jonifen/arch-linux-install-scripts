@@ -23,7 +23,7 @@ echo ::1 localhost >> /etc/hosts
 echo 127.0.1.1 $hostname.localdomain $hostname >> /etc/hosts
 
 # Install additional packages (they will be used later on)
-pacman -S zsh ufw iwd dhcp linux-lts-headers openssl reflector --noconfirm
+pacman -S zsh ufw iwd dhcp dhcpcd linux-lts-headers openssl reflector --noconfirm
 
 # Add my user account
 read -r -p "User name: " username
@@ -41,7 +41,7 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Enable required services
-systemctl enable dhcpd systemd-networkd systemd-resolved iwd
+systemctl enable dhcpcd systemd-networkd systemd-resolved iwd
 
 echo "Installation is complete."
 echo "Now do the following:"
